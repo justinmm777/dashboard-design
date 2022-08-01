@@ -7,6 +7,7 @@
     --project-bg-color: #FFF1F2;
     --announcement-bg-color: #E9D5FF;
     --footer-bg-color: #F0F9FF;
+    --picture-bg-color: #FFFFFF;
 
   }
 
@@ -26,7 +27,7 @@
 body {
     min-height: 100vh;
     text-rendering: optimizeSpeed;
-    line-height: 1.5;
+    line-height: 1rem;
     padding: 1rem;
   }
 
@@ -57,11 +58,58 @@ body {
 .container > div {
     padding: 1rem;
 }
-
+/* Header Start */
 .header {
     background-color: var(--header-bg-color);
     grid-area: header;
 }
+
+.topnav{
+    /* background-color: #3B82F6; */
+    /* height: 2rem; */
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.topnav a {
+align-self: center;
+}
+
+.topnav .user {
+    display: flex;
+    padding: 0.5rem;
+    margin-left: 3rem;
+    align-items: center;
+    gap: 1rem;
+
+}
+
+.topnav .userImage {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: 2px solid blue;
+    background-color: var(--picture-bg-color);
+}
+
+/* flex the input to available space */
+.topnav .search {
+    flex: 1;
+}
+
+  /* Style the search box inside the navigation bar */
+.topnav input[type=text] {
+    float: left;
+    border: none;
+    margin: 0.5em;
+    font-size: 1em;
+    border-radius: 2rem;
+  }
+
+
+/* Header End */
 
 /* Sidebar start */
 .sidebar {
@@ -101,12 +149,14 @@ a:link, a:visited {
     color: white;
 }
 
-
 /* Sidebar end */
 
 .article {
     background-color: var(--article-bg-color);
     grid-area: article;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    
 }
 
 .article > div {
@@ -114,6 +164,9 @@ a:link, a:visited {
 }
 .projects {
     background-color: var(--project-bg-color);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
 }
 
 .announcements {
@@ -158,4 +211,10 @@ a:link, a:visited {
         "sidebar article article article"
         "sidebar article article article";
     }
+
+    /* .header {
+        grid-template-areas:
+        "search search user"
+        "userDetails userDetails userBtn";
+    } */
 } 
