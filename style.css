@@ -1,3 +1,15 @@
+
+:root {
+    --sidebar-letter-color: white;
+    --header-bg-color: #DBEAFE;
+    --sidebar-bg-color: #3B82F6;
+    --article-bg-color: #E0F2FE;
+    --project-bg-color: #FFF1F2;
+    --announcement-bg-color: #E9D5FF;
+    --footer-bg-color: #F0F9FF;
+
+  }
+
 /* Box sizing rules */
 *,
 *::before,
@@ -47,17 +59,54 @@ body {
 }
 
 .header {
-    background-color: antiquewhite;
+    background-color: var(--header-bg-color);
     grid-area: header;
 }
 
+/* Sidebar start */
 .sidebar {
-    background-color: rgb(0, 140, 255);
+    background-color: var(--sidebar-bg-color);
     grid-area: sidebar;
+    display: grid;
+    grid-template-rows: 1fr 8fr;
 }
 
+.sidebar .dashboard {
+    display: flex;
+}
+.sidebar .dashboard h1 {
+    margin-left: 1rem;
+    color: var(--sidebar-letter-color);
+}
+
+.sidebar .nav {
+    padding: 1rem;
+}
+
+.sidebar .nav ul li {
+    border: 1px solid white;
+    color: white;
+    font-size: 1.5em;
+    list-style: none;
+    padding: 0.5rem;
+}
+
+.sidebar .nav ul li a {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+a:link, a:visited {
+    text-decoration: none;
+    color: white;
+}
+
+
+/* Sidebar end */
+
 .article {
-    background-color: rgb(196, 192, 192);
+    background-color: var(--article-bg-color);
     grid-area: article;
 }
 
@@ -65,15 +114,15 @@ body {
     padding: 1rem;
 }
 .projects {
-    background-color: aliceblue;
+    background-color: var(--project-bg-color);
 }
 
 .announcements {
-    background-color: aliceblue;
+    background-color: var(--announcement-bg-color);
 }
 
 .footer {
-    background-color: blueviolet;
+    background-color: var(--footer-bg-color);
     margin-top: 1rem;
 }
 
