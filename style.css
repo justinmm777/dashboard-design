@@ -1,0 +1,113 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Set core body defaults */
+body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+    padding: 1rem;
+  }
+
+  /* Make images easier to work with */
+  img,
+  picture {
+    max-width: 100%;
+    display: block;
+  }
+  
+
+.container {
+    min-height: 100vh;
+    display: grid;
+    gap: 1rem;
+    grid-auto-columns: 1fr;
+    grid-template-areas:
+    'sidebar'
+    'header'
+    'article'
+    'footer';
+
+    /* padding-block: 2rem; */
+    /* width: min(95%, 70rem); */
+    margin-inline: auto;
+}
+
+.container > div {
+    padding: 1rem;
+}
+
+.header {
+    background-color: antiquewhite;
+    grid-area: header;
+}
+
+.sidebar {
+    background-color: rgb(0, 140, 255);
+    grid-area: sidebar;
+}
+
+.article {
+    background-color: rgb(196, 192, 192);
+    grid-area: article;
+}
+
+.article > div {
+    padding: 1rem;
+}
+.projects {
+    background-color: aliceblue;
+}
+
+.announcements {
+    background-color: aliceblue;
+}
+
+.footer {
+    background-color: blueviolet;
+    margin-top: 1rem;
+}
+
+/* Media Queries*/
+@media screen and (min-width: 33em) {
+    .container {
+        grid-template-areas:
+        "sidebar header"
+        "sidebar article";
+    }
+}
+
+@media screen and (min-width: 38em) {
+    .container {
+        grid-template-areas:
+        "sidebar header"
+        "sidebar article";
+    }
+}
+
+@media screen and (min-width: 54em) {
+    .container {
+        grid-template-areas:
+        "sidebar header header"
+        "sidebar article article";
+    }
+}
+
+@media screen and (min-width: 75em) {
+    .container {
+        grid-template-areas:
+        "sidebar header header header"
+        "sidebar article article article"
+        "sidebar article article article"
+        "sidebar article article article";
+    }
+} 
