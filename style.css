@@ -2,6 +2,7 @@
 :root {
     --sidebar-letter-color: white;
     --header-bg-color: #DBEAFE;
+    --search-bg-color:#D6D3D1;
     --sidebar-bg-color: #3B82F6;
     --article-bg-color: #E0F2FE;
     --project-bg-color: #FFF1F2;
@@ -9,7 +10,7 @@
     --footer-bg-color: #F0F9FF;
     --picture-bg-color: #FFFFFF;
 
-  }
+}
 
 /* Box sizing rules */
 *,
@@ -29,15 +30,15 @@ body {
     text-rendering: optimizeSpeed;
     line-height: 1rem;
     padding: 1rem;
-  }
+}
 
   /* Make images easier to work with */
-  img,
-  picture {
+img,
+picture {
     max-width: 100%;
     display: block;
-  }
-  
+}
+
 
 .container {
     min-height: 100vh;
@@ -60,17 +61,17 @@ body {
 }
 /* Header Start */
 .header {
-    background-color: var(--header-bg-color);
+    background-color: var(--picture-bg-color);
     grid-area: header;
 }
 
+/* topnav start */
 .topnav{
-    /* background-color: #3B82F6; */
-    /* height: 2rem; */
     overflow: hidden;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    margin-bottom: 1rem;
 }
 
 .topnav a {
@@ -103,10 +104,72 @@ align-self: center;
 .topnav input[type=text] {
     float: left;
     border: none;
+    background-color: var(--search-bg-color);
     margin: 0.5em;
     font-size: 1em;
     border-radius: 2rem;
   }
+
+/* topnav end */
+
+/* secondNav start */
+.secondNav {
+    display: flex;
+    overflow: hidden;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    
+}
+
+.secondNav .user {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+.secondNav .userImage {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: 2px solid blue;
+    background-color: var(--picture-bg-color);
+}
+
+.secondNav .userBtn {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+/* button color from uiverse.io */
+.newBtn,
+.uploadBtn,
+.shareBtn {
+    display: inline-block;
+    border-radius: 1em;
+    border: none;
+    background: #1875FF;
+    color: white;
+    font-family: inherit;
+    text-align: center;
+    font-size: 1rem;
+    box-shadow: 0px 14px 56px -11px #1875FF;
+    width: 10em;
+    padding: 1em;
+    transition: all 0.4s;
+    cursor: pointer;
+}
+
+.newBtn:hover,
+.uploadBtn:hover,
+.shareBtn:hover {
+    background-color: #23c483;
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+}
+
+/* secondNav end */
+
 
 
 /* Header End */
