@@ -2,7 +2,7 @@
 :root {
     --sidebar-letter-color: white;
     --header-bg-color: #DBEAFE;
-    --search-bg-color:#D6D3D1;
+    --search-bg-color:#eae5e1;
     --sidebar-bg-color: #3B82F6;
     --article-bg-color: #E0F2FE;
     --project-bg-color: #FFF1F2;
@@ -43,7 +43,8 @@ picture {
 .container {
     min-height: 100vh;
     display: grid;
-    gap: 1rem;
+    /* gap: 1rem; */
+    grid-template-rows: auto 1fr;
     grid-auto-columns: 1fr;
     grid-template-areas:
     'sidebar'
@@ -91,7 +92,7 @@ align-self: center;
     height: 50px;
     width: 50px;
     border-radius: 50%;
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
     background-color: var(--picture-bg-color);
 }
 
@@ -131,7 +132,6 @@ align-self: center;
     height: 50px;
     width: 50px;
     border-radius: 50%;
-    border: 2px solid blue;
     background-color: var(--picture-bg-color);
 }
 
@@ -152,8 +152,8 @@ align-self: center;
     font-family: inherit;
     text-align: center;
     font-size: 1rem;
-    box-shadow: 0px 14px 56px -11px #1875FF;
     width: 10em;
+    height: 3em;
     padding: 1em;
     transition: all 0.4s;
     cursor: pointer;
@@ -238,7 +238,7 @@ a:link, a:visited {
 
 .footer {
     background-color: var(--footer-bg-color);
-    margin-top: 1rem;
+    grid-area: footer;
 }
 
 /* Media Queries*/
@@ -246,7 +246,8 @@ a:link, a:visited {
     .container {
         grid-template-areas:
         "sidebar header"
-        "sidebar article";
+        "sidebar article"
+        "footer footer";
     }
 }
 
@@ -254,7 +255,8 @@ a:link, a:visited {
     .container {
         grid-template-areas:
         "sidebar header"
-        "sidebar article";
+        "sidebar article"
+        "footer footer";
     }
 }
 
@@ -262,7 +264,8 @@ a:link, a:visited {
     .container {
         grid-template-areas:
         "sidebar header header"
-        "sidebar article article";
+        "sidebar article article"
+        "footer footer footer";
     }
 }
 
@@ -271,8 +274,7 @@ a:link, a:visited {
         grid-template-areas:
         "sidebar header header header"
         "sidebar article article article"
-        "sidebar article article article"
-        "sidebar article article article";
+        "footer footer footer footer";
     }
 
     /* .header {
