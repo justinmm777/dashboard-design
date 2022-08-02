@@ -261,13 +261,17 @@ a:link, a:visited {
     margin: 1rem 0 0 1rem;
 }
 
-.projects .card .icons {
+.projects .card .icons ul {
     padding: 1rem;
     height: 1rem;
     display: flex;
     justify-content: end;
     align-items: center;
     gap: 2rem;
+}
+
+.projects .card .icons ul {
+    list-style: none;
 }
 
 /* card end */
