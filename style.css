@@ -398,10 +398,4 @@ a:link, a:visited {
         grid-template-areas:
         "projects projects projects right-side";
     }
-
-    /* .header {
-        grid-template-areas:
-        "search search user"
-        "userDetails userDetails userBtn";
-    } */
 } 
