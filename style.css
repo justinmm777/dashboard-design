@@ -31,7 +31,7 @@ body {
     min-height: 100vh;
     text-rendering: optimizeSpeed;
     line-height: 1rem;
-    padding: 1rem;
+    /* padding: 1rem; */
 }
 
   /* Make images easier to work with */
@@ -179,11 +179,12 @@ align-self: center;
     background-color: var(--sidebar-bg-color);
     grid-area: sidebar;
     display: grid;
-    grid-template-rows: 1fr 8fr;
+    grid-template-rows: auto 1fr;
 }
 
 .sidebar .dashboard {
     display: flex;
+    align-items: center;
 }
 .sidebar .dashboard h1 {
     margin-left: 1rem;
@@ -219,9 +220,10 @@ a:link, a:visited {
     background-color: var(--article-bg-color);
     grid-area: article;
     display: grid;
-    grid-template-columns: 2fr 1fr;
     gap: 1rem;
-    /* grid-template-rows: auto 1fr; */
+    grid-template-areas:
+    'projects'
+    'right-side';
 }
 
 .titles {
@@ -235,7 +237,10 @@ a:link, a:visited {
     margin-left: 2rem;
 }
 /* project start */
-.cards {
+.projects {
+    grid-area: projects;
+}
+.projects .cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 15px;
@@ -280,6 +285,7 @@ a:link, a:visited {
 
 /* right side start */
 .right-side {
+    grid-area: right-side;
     display: grid;
     grid-template-rows: repeat(2, 1fr);
 }
@@ -341,15 +347,18 @@ a:link, a:visited {
 .footer {
     background-color: var(--footer-bg-color);
     grid-area: footer;
+    display: flex;
+    justify-content: center;
 }
 
 /* Media Queries*/
 @media screen and (min-width: 33em) {
     .container {
         grid-template-areas:
-        "sidebar header"
-        "sidebar article"
-        "footer footer";
+        "sidebar" 
+        "header"
+        "article"
+        "footer";
     }
 }
 
@@ -360,6 +369,11 @@ a:link, a:visited {
         "sidebar article"
         "footer footer";
     }
+
+    .article {
+        grid-template-areas:
+        "projects right-side";
+    }
 }
 
 @media screen and (min-width: 54em) {
@@ -369,6 +383,11 @@ a:link, a:visited {
         "sidebar article article"
         "footer footer footer";
     }
+
+    .article {
+        grid-template-areas:
+        "projects projects right-side";
+    }
 }
 
 @media screen and (min-width: 75em) {
@@ -377,6 +396,11 @@ a:link, a:visited {
         "sidebar header header header"
         "sidebar article article article"
         "footer footer footer footer";
+    }
+
+    .article {
+        grid-template-areas:
+        "projects projects projects right-side";
     }
 
     /* .header {
