@@ -51,11 +51,12 @@ picture {
     display: grid;
     /* gap: 1rem; */
     grid-template-rows: auto 1fr;
-    grid-auto-columns: 0.5fr 1fr;
+    grid-auto-columns: 0.3fr 1fr;
     grid-template-areas:
     'sidebar'
     'header'
     'article'
+    'right-side'
     'footer';
     margin-inline: auto;
 }
@@ -220,39 +221,33 @@ a:link, a:visited {
     grid-area: article;
     display: grid;
     gap: 1rem;
+    grid-auto-columns: 1fr;
     grid-template-areas:
     'projects'
     'right-side';
 }
 
-.titles {
-    background-color: #23c483;
-    grid-area: 1 / 1 / 2/ 3;
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-}
-
-.titles .heading2 {
-    margin-left: 2rem;
-}
 /* project start */
-.projects {
+
+.article .projects {
     grid-area: projects;
-}
-.projects .cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 15px;
 }
 
+.article .projects .heading1 {
+    grid-area: 1 / 1 / 2 / -1;
+}
 
 /* card start */
 .projects .card {
+    display: block;
     background-color: var(--picture-bg-color);
     border-radius: 10px;
     display: grid;
     grid-template-columns: 5px 1fr;
-    grid-template-rows: 1fr auto;
+    grid-template-rows:1fr auto;
     height: 200px;
 }
 
@@ -266,6 +261,14 @@ a:link, a:visited {
     margin: 1rem 0 0 1rem;
 }
 
+.projects .calculator-img {
+    background-image: url(./images/calculator.png);
+}
+
+.projects .card .icons {
+    z-index: 1;
+}
+
 .projects .card .icons ul {
     padding: 1rem;
     height: 1rem;
@@ -273,11 +276,9 @@ a:link, a:visited {
     justify-content: end;
     align-items: center;
     gap: 2rem;
-}
-
-.projects .card .icons ul {
     list-style: none;
 }
+
 
 /* card end */
 /* project end */
@@ -354,7 +355,14 @@ a:link, a:visited {
         "sidebar" 
         "header"
         "article"
+        "right-side"
         "footer";
+    }
+
+    .article {
+        grid-template-areas:
+        "projects" 
+        "right-side";
     }
 }
 
@@ -362,13 +370,14 @@ a:link, a:visited {
     .container {
         grid-template-areas:
         "sidebar header"
-        "sidebar article"
+        "article right-side"
+        "article right-side"
         "footer footer";
     }
 
     .article {
         grid-template-areas:
-        "projects right-side";
+        "projects projects";
     }
 }
 
@@ -376,26 +385,26 @@ a:link, a:visited {
     .container {
         grid-template-areas:
         "sidebar header header"
-        "sidebar article article"
+        "sidebar article right-side"
         "footer footer footer";
     }
 
     .article {
         grid-template-areas:
-        "projects projects right-side";
+        "projects projects projects";
     }
 }
 
 @media screen and (min-width: 75em) {
     .container {
         grid-template-areas:
-        "sidebar header header header"
-        "sidebar article article article"
-        "footer footer footer footer";
+        "sidebar header header"
+        "sidebar article right-side"
+        "footer footer footer";
     }
 
     .article {
         grid-template-areas:
-        "projects projects projects right-side";
+        "projects projects projects";
     }
 } 
