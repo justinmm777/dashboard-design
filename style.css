@@ -278,6 +278,10 @@ a:link, a:visited {
     background-image: url(./images/sign-up-form.png)
 }
 
+.linux-distros-img {
+    background-image: url(./images/linux-distros.png);
+}
+
 /* card background images end */
 
 .projects .card .color {
