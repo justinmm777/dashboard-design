@@ -251,6 +251,35 @@ a:link, a:visited {
     height: 200px;
 }
 
+/* card background images start */
+
+/* make the image to fit the grid */
+.projects .card-img {
+    background-size: cover;
+}
+
+.projects .calculator-img {
+    background-image: url(./images/calculator.png);
+}
+
+.projects .library-app-img {
+    background-image: url(./images/library-app.png);
+}
+
+.rock-paper-game-img {
+    background-image: url(./images/rock-paper-game.png);
+}
+
+.etch-a-sketch-img {
+    background-image: url(./images/etch-a-sketch.png);
+}
+
+.sign-up-form-img {
+    background-image: url(./images/sign-up-form.png)
+}
+
+/* card background images end */
+
 .projects .card .color {
     background-color: var(--card-side-color);
     border-radius: 50px 0 0 50px;
@@ -259,11 +288,9 @@ a:link, a:visited {
 
 .projects .card .content {
     margin: 1rem 0 0 1rem;
+    padding: 1rem;
 }
 
-.projects .calculator-img {
-    background-image: url(./images/calculator.png);
-}
 
 .projects .card .icons {
     z-index: 1;
